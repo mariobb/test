@@ -1,0 +1,24 @@
+
+<h1>Listing hotels</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Formatted address</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+
+  <% @hotels.each do |hotel| %>
+    <tr>
+      <td><%= hotel.name %></td>
+      <td><%= hotel.address %></td>
+      <td><%= hotel.formatted_address %></td>
+      <td><%= hotel.latitude %></td>
+      <td><%= hotel.longitude %></td>
+      <td><%= link_to 'Show', hotel_path(hotel) %></td>
+      <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+    </tr>
+  <% end %>
+</table>

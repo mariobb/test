@@ -1,0 +1,48 @@
+
+<h1>New hotel</h1>
+
+<%= form_for :hotel, url: hotels_path do |f| %>
+
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@hotel.errors.count, "error") %> prohibited
+        this hotel from being saved:
+      </h2>
+      <ul>
+        <% @hotel.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :formatted_address %><br>
+    <%= f.text_field :formatted_address %>
+  </p>
+
+  <p>
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </p>
+
+  <p>
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
